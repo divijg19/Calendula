@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func main() {
+func name() {
 	// Create a new reader that reads from standard input (the keyboard). [14]
 	reader := bufio.NewReader(os.Stdin)
 

@@ -167,6 +167,8 @@ func main() {
 
 	printArea(r)
 	printArea(c)
+	name()
+	year()
 
 	// 8. ERROR HANDLING
 	// Go has a simple and explicit approach to error handling. [16]

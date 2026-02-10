@@ -1,3 +1,3 @@
-module github.com/divijg19/Iris
+module github.com/divijg19/Calendula
 
-go 1.25.1
+go 1.25.8
