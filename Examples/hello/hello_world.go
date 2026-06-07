@@ -11,7 +11,7 @@ import "fmt"
 // The 'main' function is the entry point of the program.
 // Execution starts here. [4]
 func main() {
-    // 'Println' is a function from the 'fmt' package that prints
-    // a line of text to the console. [4]
-    fmt.Println("Hello, World!")
+	// 'Println' is a function from the 'fmt' package that prints
+	// a line of text to the console. [4]
+	fmt.Println("Hello, World!")
 }

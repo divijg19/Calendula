@@ -34,12 +34,11 @@ func handleRoot(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Welcome to the root!")
 }
 
-
-func deleteUser(w http.ResponseWriter, r *http.Request){
+func deleteUser(w http.ResponseWriter, r *http.Request) {
 	id, err := strconv.Atoi(r.PathValue("id"))
 	if err != nil {
 		http.Error(
-			w, 
+			w,
 			err.Error(),
 			http.StatusBadRequest,
 		)
@@ -59,10 +58,10 @@ func deleteUser(w http.ResponseWriter, r *http.Request){
 }
 
 func getUser(w http.ResponseWriter, r *http.Request) {
-	id, err := strconv.Atoi(r.PathValue("id"))	
-	if err != nil{
+	id, err := strconv.Atoi(r.PathValue("id"))
+	if err != nil {
 		http.Error(
-			w, 
+			w,
 			err.Error(),
 			http.StatusBadRequest,
 		)
@@ -71,7 +70,7 @@ func getUser(w http.ResponseWriter, r *http.Request) {
 	CacheMutex.RLock()
 	user, ok := userCache[id]
 	CacheMutex.RUnlock()
-	if !ok{
+	if !ok {
 		http.Error(
 			w,
 			"User not found",
@@ -79,10 +78,10 @@ func getUser(w http.ResponseWriter, r *http.Request) {
 		)
 		return
 	}
-	
+
 	w.Header().Set("Content-Type", "application/json")
 	j, err := json.Marshal(user)
-	if err != nil{
+	if err != nil {
 		http.Error(
 			w,
 			"User not found",
